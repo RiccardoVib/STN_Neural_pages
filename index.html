@@ -109,7 +109,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            This paper introduces a novel method for emulating piano sounds. We propose to exploit the sine, transient, and noise decomposition to design a differentiable spectral modeling synthesizer replicating piano notes. Three sub-modules learn these components from piano recordings and generate the corresponding harmonic, transient, and noise signals. Splitting the emulation into three independently trainable models reduces the modeling tasks’ complexity. The quasi-harmonic content is produced using a differentiable sinusoidal model, the noise using a learnable time-varying filter, and the transients are generated using a deep convolutional network. In addition, the harmonic component is guided by physics-derived formulas, whose parameters are automatically estimated from audio recordings. Beatings and double decay stages are also included. The results show the model matches the partial distribution of the target while predicting the energy in the higher part of the spectrum presents more challenges. Lastly, the energy distribution in the spectra of the transient and noise components is accurate overall.
+           This paper introduces a novel method for emulating piano sounds. We propose to exploit the sine, transient, and noise decomposition to design a differentiable spectral modeling synthesizer replicating piano notes. Three sub-modules learn these components from piano recordings and generate the corresponding harmonic, transient, and noise signals. Splitting the emulation into three independently trainable models reduces the modeling tasks' complexity. The quasi-harmonic content is produced using a differentiable sinusoidal model guided by physics-derived formulas, whose parameters are automatically estimated from audio recordings. The noise sub-module uses a learnable time-varying filter, and the transients are generated using a deep convolutional network. From singular notes, we emulate the coupling between different keys in trichords with a convolutional-based network. Results show the model matches the partial distribution of the target while predicting the energy in the higher part of the spectrum presents more challenges. The energy distribution in the spectra of the transient and noise components is accurate overall. While the model is more computationally and memory efficient, perceptual tests reveal limitations in accurately modeling the attack phase of notes. Despite this, it generally achieves perceptual accuracy in emulating single notes and trichords.
           </p>
         </div>
       </div>
@@ -121,7 +121,7 @@
 <section class="hero teaser">
     <div class="container is-max-desktop">
   <div class="hero-body">
-        <div class="columns is-centered has-text-centered">
+       
   <h2 class="title is-3">Datasets</h2>
 <a href="https://doi.org/10.34740/kaggle/dsv/7035700"> Chords |  </a>
 <a href="https://zenodo.org/records/1213635"> BiViB Dataset </a>    
